@@ -6,7 +6,9 @@ Copyright:	GPL
 Icon:		fftw-logo-thumb.gif
 Group:		Libraries
 Source:		ftp://theory.lcs.mit.edu/pub/fftw/%{name}-%{version}.tar.gz
-URL:		http://theory.lcs.mit.edu/~fftw
+Patch:		fftw-info.patch
+Prereq:		/sbin/install-info
+URL:		http://theory.lcs.mit.edu/~fftw/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -36,6 +38,7 @@ Static fftw libraries.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 LDFLAGS="-s"; export LDFLAGS
@@ -54,9 +57,18 @@ rm -rf $RPM_BUILD_ROOT
 
 make install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded %{_libdir}/lib*.so.*.*
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
-gzip -9nf %{_infodir}/fftw.info*
+gzip -9nf $RPM_BUILD_ROOT%{_infodir}/fftw.info*
+
+%post
+/sbin/install-info %{_infodir}/%{name}.info.gz /etc/info-dir >&2
+
+%preun
+if [ "$1" = "0" ]; then
+        /sbin/install-info --delete %{_infodir}/%{name}.info.gz \
+                /etc/info-dir >&2
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
