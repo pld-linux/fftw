@@ -1,14 +1,14 @@
 Summary:	fast fourier transform library
 Name:		fftw
-Version:	2.1.2
-Release:	4
+Version:	2.1.3
+Release:	1
 Copyright:	GPL
 Group:		Libraries
-Source:		ftp://theory.lcs.mit.edu/pub/fftw/%{name}-%{version}.tar.gz
+Source:		ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
 Patch:		fftw-info.patch
 Icon:		fftw-logo-thumb.gif
+URL:		http://www.fftw.org/
 Prereq:		/usr/sbin/fix-info-dir
-URL:		http://theory.lcs.mit.edu/~fftw/
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
