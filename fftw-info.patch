@@ -9,7 +9,7 @@ diff -Nru fftw-2.1.2/doc/fftw.texi fftw-2.1.2.new/doc/fftw.texi
 +@format
 +@dircategory Libraries:
 +@direntry
-+* fftw: (fftw)				Fast Fourier Transform library
++* fftw: (fftw).				Fast Fourier Transform library
 +@end direntry
 +@end format
 +@end ifinfo
