@@ -54,7 +54,6 @@ Static fftw libraries.
 %patch -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 %ifarch i386 i486 i586 i686
 	--enable-i386-hacks \
@@ -69,10 +68,6 @@ LDFLAGS="-s"; export LDFLAGS
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
-
-gzip -9nf $RPM_BUILD_ROOT%{_infodir}/fftw.info*
 
 %post devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
