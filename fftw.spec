@@ -2,7 +2,7 @@ Summary:	Fast Fourier transform library
 Summary(pl):	Biblioteka z funkacjami szybkiej transformaty Fouriera
 Summary(pt_BR):	biblioteca fast fourier transform
 Name:		fftw
-Version:	2.1.4
+Version:	2.1.5
 Release:	1
 License:	GPL
 Group:		Libraries
@@ -10,7 +10,9 @@ Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Icon:		fftw-logo-thumb.gif
 URL:		http://www.fftw.org/
+BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -78,9 +80,11 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %patch -p1
 
 %build
-install %{_datadir}/automake/install-sh .
-install %{_datadir}/automake/config.* .
-%configure2_13 \
+%{__libtoolize}
+%{__aclocal}
+%{__autoconf}
+%{__automake}
+%configure \
 %ifarch %{ix86}
 	--enable-i386-hacks \
 %endif
