@@ -9,7 +9,7 @@ Patch:		fftw-info.patch
 Icon:		fftw-logo-thumb.gif
 URL:		http://www.fftw.org/
 Prereq:		/usr/sbin/fix-info-dir
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 FFTW is a collection of fast C routines for computing the Discrete Fourier
