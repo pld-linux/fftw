@@ -10,6 +10,7 @@ Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Icon:		fftw-logo-thumb.gif
 URL:		http://www.fftw.org/
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -77,6 +78,8 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %patch -p1
 
 %build
+cp -f %{_datadir}/automake/install-sh .
+cp -f %{_datadir}/automake/config.sub .
 %configure2_13 \
 %ifarch %{ix86}
 	--enable-i386-hacks \
