@@ -78,8 +78,8 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %patch -p1
 
 %build
-cp -f %{_datadir}/automake/install-sh .
-cp -f %{_datadir}/automake/config.sub .
+install %{_datadir}/automake/install-sh .
+install %{_datadir}/automake/config.* .
 %configure2_13 \
 %ifarch %{ix86}
 	--enable-i386-hacks \
