@@ -1,6 +1,6 @@
 Summary:	Fast Fourier transform library
-Summary(pl):	Biblioteka z funkacjami szybkiej transformaty Fouriera
-Summary(pt_BR):	biblioteca fast fourier transform
+Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
+Summary(pt_BR):	Biblioteca fast Fourier transform
 Name:		fftw
 Version:	2.1.5
 Release:	1
@@ -48,13 +48,13 @@ Requires:	%{name} = %{version}
 
 %description devel
 This package contains the additional header files, documentation and
-libraries you need to develop programs using the FFTW (fast fourier
+libraries you need to develop programs using the FFTW (fast Fourier
 transform library).
 
 %description devel -l pl
 Ten pakiet zawiera dodatkowe pliki nag³ówkowe, dokumetacjê oraz
 biblioteki niezbêdne do tworzenia programów u¿ywaj±cych biblioteki
-FFTW (fast fourier transform library).
+FFTW (fast Fourier transform library).
 
 %description devel -l pt_BR
 Este pacote contém documentação, headers e bibliotecas adicionais para
