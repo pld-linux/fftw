@@ -2,7 +2,7 @@ Summary:	Fast Fourier transform library
 Summary(pl):	biblioteka z funkacjami szybkiej transformaty Fouriera
 Name:		fftw
 Version:	2.1.3
-Release:	4
+Release:	5
 License:	GPL
 Group:		Libraries
 Group(fr):	Librairies
@@ -61,7 +61,8 @@ Static fftw libraries.
 %endif
 	--enable-shared \
 	--enable-threads \
-	--disable-debug
+	--enable-type-prefix \
+	--%{!?debug:disable}%{?debug:enable}-debug
 
 %{__make}
 
