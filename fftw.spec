@@ -47,7 +47,6 @@ LDFLAGS="-s"; export LDFLAGS
 	--enable-type-prefix \
 	--enable-threads
 
-
 make
 
 %install
@@ -56,6 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
 
 strip --strip-unneeded %{_libdir}/lib*.so.*.*
+
+gzip -9nf %{_infodir}/fftw.info*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
