@@ -15,16 +15,16 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 FFTW is a collection of fast C routines for computing the Discrete
 Fourier Transform in one or more dimensions. It includes complex,
 real, and parallel transforms, and can handle arbitrary array sizes
-efficiently. This RPM package includes both the double- and
-single-precision FFTW uniprocessor and threads libraries.
+efficiently. This RPM package includes the double precision FFTW
+uniprocessor and threads libraries.
 
 %description -l pl
 FFTW jest zbiorem szybkich funkcji C do obliczania dyskretnych
-transformat Fouriera w jedym lub wiêcej wymiarach. Zawiera równie¿
+transformat Fouriera w jednym lub wiêcej wymiarach. Zawiera równie¿
 zespolone, rzeczywiste oraz równoleg³e transformaty i potrafi wydajnie
 radziæ sobie z tablicami o dowolnych rozmiarach. Ten pakiet RPM
-zawiera wersje FFTW zarówno o pojedynczej jaki i podwójnej precyzji
-dla architektur jednoprocesorowych oraz z obs³ug± w±tków.
+zawiera wersje FFTW o podwójnej precyzji dla architektur
+jednoprocesorowych oraz z obs³ug± w±tków.
 
 %package devel
 Summary:	Headers, libraries & docs for fftw
