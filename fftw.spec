@@ -3,10 +3,10 @@ Name:		fftw
 Version:	2.1.2
 Release:	3
 Copyright:	GPL
-Icon:		fftw-logo-thumb.gif
 Group:		Libraries
 Source:		ftp://theory.lcs.mit.edu/pub/fftw/%{name}-%{version}.tar.gz
 Patch:		fftw-info.patch
+Icon:		fftw-logo-thumb.gif
 Prereq:		/sbin/install-info
 URL:		http://theory.lcs.mit.edu/~fftw/
 BuildRoot:	/tmp/%{name}-%{version}-root
