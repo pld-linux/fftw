@@ -61,10 +61,10 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/fftw.info*
 
-%post
+%post devel
 /sbin/install-info %{_infodir}/%{name}.info.gz /etc/info-dir >&2
 
-%preun
+%preun devel
 if [ "$1" = "0" ]; then
         /sbin/install-info --delete %{_infodir}/%{name}.info.gz \
                 /etc/info-dir >&2
