@@ -18,6 +18,13 @@ parallel transforms, and can handle arbitrary array sizes efficiently. This
 RPM package includes both the double- and single-precision FFTW uniprocessor
 and threads libraries.
 
+%description -l pl
+FFTW jest zbiorem szybkich funkcji C do obliczania dyskretnych transformacji
+Fouriera w jedym lub wiêcej wymiarach. Zawiera równie¿ z³o¿one, rzeczywiste
+oraz równoleg³e transformacje i potrafi wydajnie radziæ sobie z tablicami o
+dowolnych rozmiarach. Ten pakiet RPM zawiera zarówno uniprocesor FFTW o
+pojedynczej i podwójnej precyzji jak i biblioteki w±tków.
+
 %package devel
 Summary:	headers, libraries, & docs for fftw
 Group:		Development/Libraries
