@@ -63,7 +63,7 @@ LDFLAGS="-s"; export LDFLAGS
 	--enable-type-prefix \
 	--enable-threads
 
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
