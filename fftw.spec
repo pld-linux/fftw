@@ -2,7 +2,7 @@ Summary:	Fast Fourier transform library
 Summary(pl):	Biblioteka z funkacjami szybkiej transformaty Fouriera
 Name:		fftw
 Version:	2.1.3
-Release:	8
+Release:	9
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
@@ -20,11 +20,11 @@ single-precision FFTW uniprocessor and threads libraries.
 
 %description -l pl
 FFTW jest zbiorem szybkich funkcji C do obliczania dyskretnych
-transformacji Fouriera w jedym lub wiêcej wymiarach. Zawiera równie¿
-z³o¿one, rzeczywiste oraz równoleg³e transformacje i potrafi wydajnie
+transformat Fouriera w jedym lub wiêcej wymiarach. Zawiera równie¿
+zespolone, rzeczywiste oraz równoleg³e transformaty i potrafi wydajnie
 radziæ sobie z tablicami o dowolnych rozmiarach. Ten pakiet RPM
-zawiera zarówno uniprocesor FFTW o pojedynczej i podwójnej precyzji
-jak i biblioteki w±tków.
+zawiera wersje FFTW zarówno o pojedynczej jaki i podwójnej precyzji
+dla architektur jednoprocesorowych oraz z obs³ug± w±tków.
 
 %package devel
 Summary:	Headers, libraries & docs for fftw
