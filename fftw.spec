@@ -1,7 +1,7 @@
 Summary:	fast fourier transform library
 Name:		fftw
 Version:	2.1.3
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Group(fr):	Librairies
@@ -59,8 +59,8 @@ Static fftw libraries.
 	--enable-i386-hacks \
 %endif
 	--enable-shared \
-	--enable-type-prefix \
-	--enable-threads
+	--enable-threads \
+	--disable-debug
 
 %{__make}
 
