@@ -1,5 +1,5 @@
 Summary:	Fast Fourier transform library
-Summary(pl):	biblioteka z funkacjami szybkiej transformaty Fouriera
+Summary(pl):	Biblioteka z funkacjami szybkiej transformaty Fouriera
 Name:		fftw
 Version:	2.1.3
 Release:	8
@@ -34,7 +34,8 @@ zawiera zarówno uniprocesor FFTW o pojedynczej i podwójnej precyzji
 jak i biblioteki w±tków.
 
 %package devel
-Summary:	headers, libraries, & docs for fftw
+Summary:	Headers, libraries & docs for fftw
+Summary(pl):	Nag³ówki, biblioteki oraz dokumentacja do fftw
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -46,12 +47,18 @@ Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Requires:	%{name} = %{version}
 
 %description devel
-This package contains the additional header files, documentation, and
-libraries you need to develop programs using the FFTW fast fourier
-transform library.
+This package contains the additional header files, documentation and
+libraries you need to develop programs using the FFTW (fast fourier
+transform library).
+
+%description devel -l pl
+Ten pakiet zawiera dodatkowe pliki nag³ówkowe, dokumetacjê oraz
+biblioteki niezbêdne do tworzenia programów u¿ywaj±cych biblioteki
+FFTW (fast fourier transform library).
 
 %package static
 Summary:	Static fftw libraries
+Summary(pl):	Statyczne biblioteki fftw
 Group:		Development/Libraries
 Group(de):	Entwicklung/Libraries
 Group(es):	Desarrollo/Bibliotecas
@@ -64,6 +71,9 @@ Requires:	%{name}-devel = %{version}
 
 %description static
 Static fftw libraries.
+
+%description static -l pl
+Statyczne biblioteki fftw.
 
 %prep
 %setup -q
