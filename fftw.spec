@@ -52,7 +52,7 @@ libraries you need to develop programs using the FFTW (fast Fourier
 transform library).
 
 %description devel -l pl
-Ten pakiet zawiera dodatkowe pliki nag³ówkowe, dokumetacjê oraz
+Ten pakiet zawiera dodatkowe pliki nag³ówkowe, dokumentacjê oraz
 biblioteki niezbêdne do tworzenia programów u¿ywaj±cych biblioteki
 FFTW (fast Fourier transform library).
 
