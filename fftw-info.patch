@@ -1,0 +1,19 @@
+diff -Nru fftw-2.1.2/doc/fftw.texi fftw-2.1.2.new/doc/fftw.texi
+--- fftw-2.1.2/doc/fftw.texi	Tue May 18 19:52:44 1999
++++ fftw-2.1.2.new/doc/fftw.texi	Thu Aug  5 14:59:25 1999
+@@ -71,6 +71,15 @@
+ approved by the Free Software Foundation.
+ @end titlepage
+ 
++@ifinfo
++@format
++@dircategory Libraries:
++@direntry
++* fftw: (fftw)				Fast Fourier Transform library
++@end direntry
++@end format
++@end ifinfo
++
+ @node    Top, Introduction, (dir), (dir)
+ @ifinfo
+ @top FFTW User Manual
