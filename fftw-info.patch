@@ -1,19 +1,18 @@
-diff -Nru fftw-2.1.2/doc/fftw.texi fftw-2.1.2.new/doc/fftw.texi
---- fftw-2.1.2/doc/fftw.texi	Tue May 18 19:52:44 1999
-+++ fftw-2.1.2.new/doc/fftw.texi	Thu Aug  5 14:59:25 1999
-@@ -71,6 +71,15 @@
- approved by the Free Software Foundation.
+--- fftw-3.0.1/doc/fftw3.texi.orig	2003-06-06 04:30:05.000000000 +0200
++++ fftw-3.0.1/doc/fftw3.texi	2004-08-02 15:50:18.336080928 +0200
+@@ -103,6 +103,15 @@
+ @insertcopying
  @end titlepage
  
 +@ifinfo
 +@format
 +@dircategory Libraries:
 +@direntry
-+* fftw: (fftw).				Fast Fourier Transform library
++* fftw3: (fftw3).				Fast Fourier Transform library
 +@end direntry
 +@end format
 +@end ifinfo
 +
- @node    Top, Introduction, (dir), (dir)
- @ifinfo
- @top FFTW User Manual
+ @contents
+ 
+ @ifnottex
