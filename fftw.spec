@@ -75,10 +75,10 @@ strip --strip-unneeded $RPM_BUILD_ROOT%{_libdir}/lib*.so.*.*
 gzip -9nf $RPM_BUILD_ROOT%{_infodir}/fftw.info*
 
 %post devel
-[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %postun devel
-[ -x /usr/sbin/fix-info-dir ] && /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
