@@ -71,7 +71,7 @@ Static fftw libraries.
 
 %build
 %configure2_13 \
-%ifarch i386 i486 i586 i686
+%ifarch %{ix86}
 	--enable-i386-hacks \
 %endif
 	--enable-shared \
