@@ -1,5 +1,6 @@
 Summary:	Fast Fourier transform library
 Summary(pl):	Biblioteka z funkacjami szybkiej transformaty Fouriera
+Summary(pt_BR):	biblioteca fast fourier transform
 Name:		fftw
 Version:	2.1.3
 Release:	10
@@ -26,9 +27,18 @@ radziæ sobie z tablicami o dowolnych rozmiarach. Ten pakiet RPM
 zawiera wersje FFTW o podwójnej precyzji dla architektur
 jednoprocesorowych oraz z obs³ug± w±tków.
 
+%description -l pt_BR
+FFTW é uma coleção de rotinas rápidas em C para computar a Discrete
+Fourier Transform em uma ou mais dimensões. Incluindo transformações
+complexas, reais e paralelas, também pode manipular vetores de tamanho
+arbitrário eficientemente. Esse pacote RPM inclui bibliotecas FFTW com
+suporte a threads, normal e dupla precisão (Os arquivos de precisão
+normal tem um prefixo "s").
+
 %package devel
 Summary:	Headers, libraries & docs for fftw
 Summary(pl):	Nag³ówki, biblioteki oraz dokumentacja do fftw
+Summary(pt_BR):	headers, bibliotecas e documentação do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name} = %{version}
 
@@ -42,9 +52,14 @@ Ten pakiet zawiera dodatkowe pliki nag³ówkowe, dokumetacjê oraz
 biblioteki niezbêdne do tworzenia programów u¿ywaj±cych biblioteki
 FFTW (fast fourier transform library).
 
+%description devel -l pt_BR
+Este pacote contém documentação, headers e bibliotecas adicionais para
+desenvolver programas usando a FFTW.
+
 %package static
 Summary:	Static fftw libraries
 Summary(pl):	Statyczne biblioteki fftw
+Summary(pt_BR):	bibliotecas estáticas do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}
 
@@ -53,6 +68,9 @@ Static fftw libraries.
 
 %description static -l pl
 Statyczne biblioteki fftw.
+
+%description static -l pt_BR
+Este pacote contém as bibliotecas estáticas do pacote FFTW.
 
 %prep
 %setup -q
