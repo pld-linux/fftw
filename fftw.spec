@@ -5,10 +5,15 @@ Version:	2.1.3
 Release:	7
 License:	GPL
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	Библиотеки
+Group(uk):	Б╕бл╕отеки
 Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
-Patch0:		fftw-info.patch
+Patch0:		%{name}-info.patch
 Icon:		fftw-logo-thumb.gif
 URL:		http://www.fftw.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -31,8 +36,13 @@ jak i biblioteki w╠tkСw.
 %package devel
 Summary:	headers, libraries, & docs for fftw
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name} = %{version}
 
 %description devel
@@ -43,8 +53,13 @@ transform library.
 %package static
 Summary:	Static fftw libraries
 Group:		Development/Libraries
+Group(de):	Entwicklung/Libraries
+Group(es):	Desarrollo/Bibliotecas
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
+Group(pt_BR):	Desenvolvimento/Bibliotecas
+Group(ru):	Разработка/Библиотеки
+Group(uk):	Розробка/Б╕бл╕отеки
 Requires:	%{name}-devel = %{version}
 
 %description static
