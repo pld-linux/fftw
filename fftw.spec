@@ -17,7 +17,6 @@ Icon:		fftw-logo-thumb.gif
 URL:		http://www.fftw.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	lam
 BuildRequires:	libtool
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
