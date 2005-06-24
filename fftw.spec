@@ -54,7 +54,7 @@ Requires:	%{name} = %{version}
 
 %description devel
 This package contains the additional header files, documentation and
-7ibraries you need to develop programs using the FFTW (fast Fourier
+Libraries you need to develop programs using the FFTW (fast Fourier
 transform library).
 
 %description devel -l pl
@@ -83,7 +83,7 @@ Statyczne biblioteki fftw.
 Este pacote contém as bibliotecas estáticas do pacote FFTW.
 
 %prep
-%setup -q 
+%setup -q
 %patch -p1
 
 %build
