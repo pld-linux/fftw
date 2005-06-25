@@ -91,6 +91,7 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 
 tar xzf %{SOURCE0}
 mv %{name}-%{version}/ single/
+cd single
 
 %{__libtoolize}
 %{__aclocal}
