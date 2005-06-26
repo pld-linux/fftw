@@ -7,7 +7,7 @@ Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
 Summary(pt_BR):	Biblioteca fast Fourier transform
 Name:		fftw
 Version:	2.1.5
-Release:	2
+Release:	3
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
@@ -86,17 +86,12 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %patch -p1
 
 %build
-# This is important to do sfftw (Single precision library)
-%if %{with single}
-
-tar xzf %{SOURCE0}
-mv %{name}-%{version}/ single/
-cd single
-
 %{__libtoolize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
+
+%if %{with single}
 %configure \
 %ifarch %{ix86}
         --enable-i386-hacks \
@@ -108,14 +103,10 @@ cd single
         --%{!?debug:dis}%{?debug:en}able-debug
 
 %{__make}
-
-cd -
+%{__make} install \
+	DESTDIR=$(pwd)/single
 %endif
 
-%{__libtoolize}
-%{__aclocal}
-%{__autoconf}
-%{__automake}
 %configure \
 %ifarch %{ix86}
 	--enable-i386-hacks \
@@ -123,19 +114,13 @@ cd -
 	--enable-shared \
 	--enable-threads \
 	--%{!?debug:dis}%{?debug:en}able-debug
-#        --enable-type-prefix \
 
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%if %{with single}
-cd single
-%{__make} install \
-        DESTDIR=$RPM_BUILD_ROOT
-cd -
-%endif
+%{?with_single:cp -ar single $RPM_BUILD_ROOT}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
