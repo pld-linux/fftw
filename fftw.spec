@@ -45,25 +45,25 @@ suporte a threads, normal e dupla precisão (Os arquivos de precisão
 normal tem um prefixo "s").
 
 %package devel
-Summary:	Headers, libraries & docs for fftw
-Summary(pl):	Nag³ówki, biblioteki oraz dokumentacja do fftw
-Summary(pt_BR):	headers, bibliotecas e documentação do pacote FFTW
+Summary:	Header files and development documentation for FFTW library
+Summary(pl):	Pliki nag³ówkowe i dokumentacja programisty do biblioteki FFTW
+Summary(pt_BR):	Headers e documentação do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-This package contains the additional header files, documentation and
-Libraries you need to develop programs using the FFTW (fast Fourier
-transform library).
+This package contains the additional header files and documentation
+you need to develop programs using the FFTW (fast Fourier transform
+library).
 
 %description devel -l pl
-Ten pakiet zawiera dodatkowe pliki nag³ówkowe, dokumentacjê oraz
-biblioteki niezbêdne do tworzenia programów u¿ywaj±cych biblioteki
-FFTW (fast Fourier transform library).
+Ten pakiet zawiera dodatkowe pliki nag³ówkowe oraz dokumentacjê do
+tworzenia programów u¿ywaj±cych biblioteki FFTW (fast Fourier
+transform library).
 
 %description devel -l pt_BR
-Este pacote contém documentação, headers e bibliotecas adicionais para
-desenvolver programas usando a FFTW.
+Este pacote contém documentação e headers adicionais para desenvolver
+programas usando a FFTW.
 
 %package static
 Summary:	Static fftw libraries
@@ -143,8 +143,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/lib*.la
 %attr(755,root,root) %{_libdir}/lib*.so
+%{_libdir}/lib*.la
 %{_includedir}/*
 %{_infodir}/fftw.info*
 
