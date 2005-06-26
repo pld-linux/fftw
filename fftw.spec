@@ -1,7 +1,7 @@
 #
 # Conditional build
 %bcond_without  single            # without single precision library
-
+#
 Summary:	Fast Fourier transform library
 Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
 Summary(pt_BR):	Biblioteca fast Fourier transform
@@ -49,7 +49,7 @@ Summary:	Headers, libraries & docs for fftw
 Summary(pl):	Nag³ówki, biblioteki oraz dokumentacja do fftw
 Summary(pt_BR):	headers, bibliotecas e documentação do pacote FFTW
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 This package contains the additional header files, documentation and
@@ -70,7 +70,7 @@ Summary:	Static fftw libraries
 Summary(pl):	Statyczne biblioteki fftw
 Summary(pt_BR):	bibliotecas estáticas do pacote FFTW
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static fftw libraries.
