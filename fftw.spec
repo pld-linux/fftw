@@ -1,6 +1,6 @@
 #
 # Conditional build
-%bcond_without  single            # without single precision library
+%bcond_without	single            # without single precision library
 #
 Summary:	Fast Fourier transform library
 Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
