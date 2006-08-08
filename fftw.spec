@@ -82,7 +82,7 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 
 %prep
 %setup -q
-%patch -p1
+%patch0 -p1
 
 %build
 %{__libtoolize}
