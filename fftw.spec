@@ -1,6 +1,6 @@
 #
 # Conditional build
-%bcond_without	single            # without single precision library
+%bcond_without	single		# without single precision library
 #
 Summary:	Fast Fourier transform library
 Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
@@ -93,13 +93,13 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %if %{with single}
 %configure \
 %ifarch %{ix86}
-        --enable-i386-hacks \
+	--enable-i386-hacks \
 %endif
-        --enable-shared \
-        --enable-threads \
-        --enable-float \
+	--enable-shared \
+	--enable-threads \
+	--enable-float \
 	--enable-type-prefix \
-        --%{!?debug:dis}%{?debug:en}able-debug
+	--%{!?debug:dis}%{?debug:en}able-debug
 
 %{__make}
 %{__make} install \
