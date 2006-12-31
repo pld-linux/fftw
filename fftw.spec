@@ -2,20 +2,23 @@
 # Conditional build
 %bcond_without	single		# without single precision library
 #
-Summary:	Fast Fourier transform library
+Summary:	Fast Fourier Transform library
 Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
 Summary(pt_BR):	Biblioteca fast Fourier transform
 Name:		fftw
 Version:	2.1.5
-Release:	3
+Release:	4
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
 # Source0-md5:	8d16a84f3ca02a785ef9eb36249ba433
 Patch0:		%{name}-info.patch
+Patch1:		%{name}-link.patch
 URL:		http://www.fftw.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+# to detect proper F77 name mangling for fortran binding functions
+BuildRequires:	gcc-g77
 BuildRequires:	libtool
 BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -65,24 +68,64 @@ Este pacote contém documentação e headers adicionais para desenvolver
 programas usando a FFTW.
 
 %package static
-Summary:	Static fftw libraries
-Summary(pl):	Statyczne biblioteki fftw
+Summary:	Static FFTW libraries
+Summary(pl):	Statyczne biblioteki FFTW
 Summary(pt_BR):	bibliotecas estáticas do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static fftw libraries.
+Static FFTW libraries.
 
 %description static -l pl
-Statyczne biblioteki fftw.
+Statyczne biblioteki FFTW.
 
 %description static -l pt_BR
 Este pacote contém as bibliotecas estáticas do pacote FFTW.
 
+%package single
+Summary:	Single-precision Fast Fourier Transform libraries
+Summary(pl):	Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji
+Group:		Libraries
+Conflicts:	fftw < 2.1.5-4
+
+%description single
+Single-precision Fast Fourier Transform libraries.
+
+%description single -l pl
+Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji.
+
+%package single-devel
+Summary:	Header files for single-precision FFTW libraries
+Summary(pl):	Pliki nag³ówkowe bibliotek FFTW pojedynczej precyzji
+Group:		Development/Libraries
+Requires:	%{name}-single = %{version}-%{release}
+
+%description single-devel
+Header files for single-precision FFTW libraries.
+
+%description single-devel -l pl
+Pliki nag³ówkowe bibliotek FFTW pojedynczej precyzji.
+
+%package single-static
+Summary:	Static single-precision FFTW libraries
+Summary(pl):	Statyczne biblioteki FFTW pojedynczej precyzji
+Group:		Development/Libraries
+Requires:	%{name}-single-devel = %{version}-%{release}
+
+%description single-static
+Static single-precision FFTW libraries.
+
+%description single-static -l pl
+Statyczne biblioteki FFTW pojedynczej precyzji.
+
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
+
+# don't use pregenerated file
+rm -f fftw/config.h
 
 %build
 %{__libtoolize}
@@ -91,7 +134,9 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %{__automake}
 
 %if %{with single}
-%configure \
+install -d build-single
+cd build-single
+../%configure \
 %ifarch %{ix86}
 	--enable-i386-hacks \
 %endif
@@ -102,11 +147,12 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 	--%{!?debug:dis}%{?debug:en}able-debug
 
 %{__make}
-%{__make} install \
-	DESTDIR=$(pwd)/single
+cd ..
 %endif
 
-%configure \
+install -d build-double
+cd build-double
+../%configure \
 %ifarch %{ix86}
 	--enable-i386-hacks \
 %endif
@@ -119,9 +165,10 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{?with_single:cp -ar single $RPM_BUILD_ROOT}
+%{__make} -C build-single install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -C build-double install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -136,17 +183,60 @@ rm -rf $RPM_BUILD_ROOT
 %postun devel
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
+%post	single -p /sbin/ldconfig
+%postun	single -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so.*.*
+%attr(755,root,root) %{_libdir}/libfftw.so.*.*.*
+%attr(755,root,root) %{_libdir}/libfftw_threads.so.*.*.*
+%attr(755,root,root) %{_libdir}/librfftw.so.*.*.*
+%attr(755,root,root) %{_libdir}/librfftw_threads.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libfftw.so
+%attr(755,root,root) %{_libdir}/libfftw_threads.so
+%attr(755,root,root) %{_libdir}/librfftw.so
+%attr(755,root,root) %{_libdir}/librfftw_threads.so
+%{_libdir}/libfftw.la
+%{_libdir}/libfftw_threads.la
+%{_libdir}/librfftw.la
+%{_libdir}/librfftw_threads.la
+%{_includedir}/fftw*.h
+%{_includedir}/rfftw*.h
 %{_infodir}/fftw.info*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libfftw.a
+%{_libdir}/libfftw_threads.a
+%{_libdir}/librfftw.a
+%{_libdir}/librfftw_threads.a
+
+%files single
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libsfftw.so.*.*.*
+%attr(755,root,root) %{_libdir}/libsfftw_threads.so.*.*.*
+%attr(755,root,root) %{_libdir}/libsrfftw.so.*.*.*
+%attr(755,root,root) %{_libdir}/libsrfftw_threads.so.*.*.*
+
+%files single-devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libsfftw.so
+%attr(755,root,root) %{_libdir}/libsfftw_threads.so
+%attr(755,root,root) %{_libdir}/libsrfftw.so
+%attr(755,root,root) %{_libdir}/libsrfftw_threads.so
+%{_libdir}/libsfftw.la
+%{_libdir}/libsfftw_threads.la
+%{_libdir}/libsrfftw.la
+%{_libdir}/libsrfftw_threads.la
+%{_includedir}/sfftw*.h
+%{_includedir}/srfftw*.h
+
+%files single-static
+%defattr(644,root,root,755)
+%{_libdir}/libsfftw.a
+%{_libdir}/libsfftw_threads.a
+%{_libdir}/libsrfftw.a
+%{_libdir}/libsrfftw_threads.a
