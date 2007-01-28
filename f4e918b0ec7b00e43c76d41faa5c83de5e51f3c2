@@ -1,0 +1,2 @@
+- my commit reverted --> BR: lam is important to compile FFTW MPI library, but
+  we don't need FFTW MPI library at this time
