@@ -3,8 +3,8 @@
 %bcond_without	single		# without single precision library
 #
 Summary:	Fast Fourier Transform library
-Summary(pl.UTF-8):   Biblioteka z funkcjami szybkiej transformaty Fouriera
-Summary(pt_BR.UTF-8):   Biblioteca fast Fourier transform
+Summary(pl.UTF-8):	Biblioteka z funkcjami szybkiej transformaty Fouriera
+Summary(pt_BR.UTF-8):	Biblioteca fast Fourier transform
 Name:		fftw
 Version:	2.1.5
 Release:	4
@@ -48,8 +48,8 @@ normal tem um prefixo "s").
 
 %package devel
 Summary:	Header files and development documentation for FFTW library
-Summary(pl.UTF-8):   Pliki nagłówkowe i dokumentacja programisty do biblioteki FFTW
-Summary(pt_BR.UTF-8):   Headers e documentação do pacote FFTW
+Summary(pl.UTF-8):	Pliki nagłówkowe i dokumentacja programisty do biblioteki FFTW
+Summary(pt_BR.UTF-8):	Headers e documentação do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -69,8 +69,8 @@ programas usando a FFTW.
 
 %package static
 Summary:	Static FFTW libraries
-Summary(pl.UTF-8):   Statyczne biblioteki FFTW
-Summary(pt_BR.UTF-8):   bibliotecas estáticas do pacote FFTW
+Summary(pl.UTF-8):	Statyczne biblioteki FFTW
+Summary(pt_BR.UTF-8):	bibliotecas estáticas do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -85,7 +85,7 @@ Este pacote contém as bibliotecas estáticas do pacote FFTW.
 
 %package single
 Summary:	Single-precision Fast Fourier Transform libraries
-Summary(pl.UTF-8):   Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji
+Summary(pl.UTF-8):	Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji
 Group:		Libraries
 Conflicts:	fftw < 2.1.5-4
 
@@ -97,7 +97,7 @@ Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji.
 
 %package single-devel
 Summary:	Header files for single-precision FFTW libraries
-Summary(pl.UTF-8):   Pliki nagłówkowe bibliotek FFTW pojedynczej precyzji
+Summary(pl.UTF-8):	Pliki nagłówkowe bibliotek FFTW pojedynczej precyzji
 Group:		Development/Libraries
 Requires:	%{name}-single = %{version}-%{release}
 
@@ -109,7 +109,7 @@ Pliki nagłówkowe bibliotek FFTW pojedynczej precyzji.
 
 %package single-static
 Summary:	Static single-precision FFTW libraries
-Summary(pl.UTF-8):   Statyczne biblioteki FFTW pojedynczej precyzji
+Summary(pl.UTF-8):	Statyczne biblioteki FFTW pojedynczej precyzji
 Group:		Development/Libraries
 Requires:	%{name}-single-devel = %{version}-%{release}
 
