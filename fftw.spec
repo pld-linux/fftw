@@ -3,8 +3,8 @@
 %bcond_without	single		# without single precision library
 #
 Summary:	Fast Fourier Transform library
-Summary(pl):	Biblioteka z funkcjami szybkiej transformaty Fouriera
-Summary(pt_BR):	Biblioteca fast Fourier transform
+Summary(pl.UTF-8):   Biblioteka z funkcjami szybkiej transformaty Fouriera
+Summary(pt_BR.UTF-8):   Biblioteca fast Fourier transform
 Name:		fftw
 Version:	2.1.5
 Release:	4
@@ -30,26 +30,26 @@ real, and parallel transforms, and can handle arbitrary array sizes
 efficiently. This RPM package includes the single and double precision
 FFTW uniprocessor and threads libraries.
 
-%description -l pl
+%description -l pl.UTF-8
 FFTW jest zbiorem szybkich funkcji C do obliczania dyskretnych
-transformat Fouriera w jednym lub wiÍcej wymiarach. Zawiera rÛwnieø
-zespolone, rzeczywiste oraz rÛwnoleg≥e transformaty i potrafi wydajnie
-radziÊ sobie z tablicami o dowolnych rozmiarach. Ten pakiet RPM
-zawiera wersje FFTW o pojedyÒczej i podwÛjnej precyzji dla architektur
-jednoprocesorowych oraz z obs≥ug± w±tkÛw.
+transformat Fouriera w jednym lub wiƒôcej wymiarach. Zawiera r√≥wnie≈º
+zespolone, rzeczywiste oraz r√≥wnoleg≈Çe transformaty i potrafi wydajnie
+radziƒá sobie z tablicami o dowolnych rozmiarach. Ten pakiet RPM
+zawiera wersje FFTW o pojedy≈Ñczej i podw√≥jnej precyzji dla architektur
+jednoprocesorowych oraz z obs≈ÇugƒÖ wƒÖtk√≥w.
 
-%description -l pt_BR
-FFTW È uma coleÁ„o de rotinas r·pidas em C para computar a Discrete
-Fourier Transform em uma ou mais dimensıes. Incluindo transformaÁıes
-complexas, reais e paralelas, tambÈm pode manipular vetores de tamanho
-arbitr·rio eficientemente. Esse pacote RPM inclui bibliotecas FFTW com
-suporte a threads, normal e dupla precis„o (Os arquivos de precis„o
+%description -l pt_BR.UTF-8
+FFTW √© uma cole√ß√£o de rotinas r√°pidas em C para computar a Discrete
+Fourier Transform em uma ou mais dimens√µes. Incluindo transforma√ß√µes
+complexas, reais e paralelas, tamb√©m pode manipular vetores de tamanho
+arbitr√°rio eficientemente. Esse pacote RPM inclui bibliotecas FFTW com
+suporte a threads, normal e dupla precis√£o (Os arquivos de precis√£o
 normal tem um prefixo "s").
 
 %package devel
 Summary:	Header files and development documentation for FFTW library
-Summary(pl):	Pliki nag≥Ûwkowe i dokumentacja programisty do biblioteki FFTW
-Summary(pt_BR):	Headers e documentaÁ„o do pacote FFTW
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe i dokumentacja programisty do biblioteki FFTW
+Summary(pt_BR.UTF-8):   Headers e documenta√ß√£o do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -58,65 +58,65 @@ This package contains the additional header files and documentation
 you need to develop programs using the FFTW (fast Fourier transform
 library).
 
-%description devel -l pl
-Ten pakiet zawiera dodatkowe pliki nag≥Ûwkowe oraz dokumentacjÍ do
-tworzenia programÛw uøywaj±cych biblioteki FFTW (fast Fourier
+%description devel -l pl.UTF-8
+Ten pakiet zawiera dodatkowe pliki nag≈Ç√≥wkowe oraz dokumentacjƒô do
+tworzenia program√≥w u≈ºywajƒÖcych biblioteki FFTW (fast Fourier
 transform library).
 
-%description devel -l pt_BR
-Este pacote contÈm documentaÁ„o e headers adicionais para desenvolver
+%description devel -l pt_BR.UTF-8
+Este pacote cont√©m documenta√ß√£o e headers adicionais para desenvolver
 programas usando a FFTW.
 
 %package static
 Summary:	Static FFTW libraries
-Summary(pl):	Statyczne biblioteki FFTW
-Summary(pt_BR):	bibliotecas est·ticas do pacote FFTW
+Summary(pl.UTF-8):   Statyczne biblioteki FFTW
+Summary(pt_BR.UTF-8):   bibliotecas est√°ticas do pacote FFTW
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static FFTW libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki FFTW.
 
-%description static -l pt_BR
-Este pacote contÈm as bibliotecas est·ticas do pacote FFTW.
+%description static -l pt_BR.UTF-8
+Este pacote cont√©m as bibliotecas est√°ticas do pacote FFTW.
 
 %package single
 Summary:	Single-precision Fast Fourier Transform libraries
-Summary(pl):	Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji
+Summary(pl.UTF-8):   Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji
 Group:		Libraries
 Conflicts:	fftw < 2.1.5-4
 
 %description single
 Single-precision Fast Fourier Transform libraries.
 
-%description single -l pl
+%description single -l pl.UTF-8
 Biblioteki szybkiej transformaty Fouriera pojedynczej precyzji.
 
 %package single-devel
 Summary:	Header files for single-precision FFTW libraries
-Summary(pl):	Pliki nag≥Ûwkowe bibliotek FFTW pojedynczej precyzji
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe bibliotek FFTW pojedynczej precyzji
 Group:		Development/Libraries
 Requires:	%{name}-single = %{version}-%{release}
 
 %description single-devel
 Header files for single-precision FFTW libraries.
 
-%description single-devel -l pl
-Pliki nag≥Ûwkowe bibliotek FFTW pojedynczej precyzji.
+%description single-devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe bibliotek FFTW pojedynczej precyzji.
 
 %package single-static
 Summary:	Static single-precision FFTW libraries
-Summary(pl):	Statyczne biblioteki FFTW pojedynczej precyzji
+Summary(pl.UTF-8):   Statyczne biblioteki FFTW pojedynczej precyzji
 Group:		Development/Libraries
 Requires:	%{name}-single-devel = %{version}-%{release}
 
 %description single-static
 Static single-precision FFTW libraries.
 
-%description single-static -l pl
+%description single-static -l pl.UTF-8
 Statyczne biblioteki FFTW pojedynczej precyzji.
 
 %prep
