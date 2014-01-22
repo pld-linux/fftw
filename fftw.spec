@@ -7,13 +7,14 @@ Summary(pl.UTF-8):	Biblioteka z funkcjami szybkiej transformaty Fouriera
 Summary(pt_BR.UTF-8):	Biblioteca fast Fourier transform
 Name:		fftw
 Version:	2.1.5
-Release:	5
+Release:	6
 License:	GPL
 Group:		Libraries
 Source0:	ftp://ftp.fftw.org/pub/fftw/%{name}-%{version}.tar.gz
 # Source0-md5:	8d16a84f3ca02a785ef9eb36249ba433
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-link.patch
+Patch2:		doctex.patch
 URL:		http://www.fftw.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -123,6 +124,7 @@ Statyczne biblioteki FFTW pojedynczej precyzji.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 # don't use pregenerated file
 rm -f fftw/config.h
@@ -189,9 +191,13 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libfftw.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libfftw.so.2
 %attr(755,root,root) %{_libdir}/libfftw_threads.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libfftw_threads.so.2
 %attr(755,root,root) %{_libdir}/librfftw.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/librfftw.so.2
 %attr(755,root,root) %{_libdir}/librfftw_threads.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/librfftw_threads.so.2
 
 %files devel
 %defattr(644,root,root,755)
@@ -217,9 +223,13 @@ rm -rf $RPM_BUILD_ROOT
 %files single
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libsfftw.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsfftw.so.2
 %attr(755,root,root) %{_libdir}/libsfftw_threads.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsfftw_threads.so.2
 %attr(755,root,root) %{_libdir}/libsrfftw.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsrfftw.so.2
 %attr(755,root,root) %{_libdir}/libsrfftw_threads.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libsrfftw_threads.so.2
 
 %files single-devel
 %defattr(644,root,root,755)
